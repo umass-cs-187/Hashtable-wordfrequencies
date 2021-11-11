@@ -1,0 +1,17 @@
+<project name="project" default="build" basedir=".">
+  <property file="build.properties"/>
+
+  <path id="classpath">
+    <fileset dir="lib">
+      <include name="*.jar"/>
+    </fileset>
+    <pathelement location="bin"/>
+  </path>
+
+  <target name="build">
+    <mkdir dir="bin"/>
+    <javac classpathref="classpath" includeantruntime="false" destdir="bin">
+      <src path="src"/>
+    </javac>
+  </target>
+</project>
